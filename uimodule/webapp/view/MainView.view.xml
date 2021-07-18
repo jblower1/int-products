@@ -1,11 +1,24 @@
  <mvc:View controllerName="interview.products.controller.MainView"
   displayBlock="true"
   xmlns="sap.m"
-  xmlns:mvc="sap.ui.core.mvc">
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:smartlist="sap.ui.comp.smartlist">
   <App id="idAppControl" >
     <pages>
       <Page title="{i18n>title}">
-        <content></content>
+        <headerContent>
+        
+        </headerContent>
+        <content>
+          <!-- <smartlist:SmartList id="productList" entitySet="/Products">
+            <smartlist:listItemTemplate>
+              <StandardListItem type="Navigation" title="{name}" description="{description}"/>
+            </smartlist:listItemTemplate>
+          </smartlist:SmartList> -->
+          <List headerText="Products" items="{ path: '/Products' }">
+            <StandardListItem type="Navigation" title="{name}" description="{productId} : {description}" info="{price}"/>
+          </List>
+        </content>
       </Page>
     </pages>
   </App>

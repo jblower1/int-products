@@ -3,7 +3,7 @@
     xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
     <edmx:DataServices
         xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
-        <Schema Namespace="interview.models"
+        <Schema Namespace="interview"
             xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
             xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
             xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
@@ -20,8 +20,8 @@
                 <Property Name="isFavourite" Type="Edm.String" Nullable="true" />
                 <Property Name="price" Type="Edm.double" Nullable="true" />
             </EntityType>
-            <EntityContainer Name="Products" m:IsDefaultEntityContainer="true">
-                <EntitySet Name="Products" EntityType="interview.models.Product" />
+            <EntityContainer Name="ProductEntities" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="Products" EntityType="interview.Product" />
             </EntityContainer>
         </Schema>
     </edmx:DataServices>

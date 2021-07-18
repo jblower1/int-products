@@ -8,7 +8,16 @@
       "version": "1.0.0"
     },
     "title": "{{appTitle}}",
-    "description": "{{appDescription}}"
+    "description": "{{appDescription}}",
+    "dataSources": {
+      "products": {
+        "uri": "/productsService/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    }
   },
   "sap.ui": {
     "technology": "UI5",
@@ -52,7 +61,17 @@
         "settings": {
           "bundleName": "interview.products.i18n.i18n"
         }
-      }
+      },
+      "": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "settings": {
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "preload": true
+        },
+        "dataSource": "products"
+      }      
     },
     "resources": {
       "css": [
