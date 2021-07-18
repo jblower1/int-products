@@ -1,0 +1,194 @@
+,
+    {
+    productId: 2,
+    name: "Chang",
+    description: "Chang Beer - 24 - 12 oz bottles",
+    colour: 1,
+    activeFrom: "2019-01-01T00:00:00",
+    price: "19.0000",
+    activeTo: "2019-01-01T00:00:00",
+    isFavourite: false
+    },
+    {
+    productId: 3,
+    name: "Aniseed Syrup",
+    description: 1,
+    colour: 2,
+    activeFrom: "12 - 550 ml bottles",
+    price: "10.0000",
+    activeTo: 13,
+    isFavourite: 70
+    },
+    {
+    productId: 4,
+    name: "Chef Anton's Cajun Seasoning",
+    description: 2,
+    colour: 2,
+    activeFrom: "48 - 6 oz jars",
+    price: "22.0000",
+    activeTo: 53,
+    isFavourite: 0
+    },
+    {
+    productId: 5,
+    name: "Chef Anton's Gumbo Mix",
+    description: 2,
+    colour: 2,
+    activeFrom: "36 boxes",
+    price: "21.3500",
+    activeTo: 0,
+    isFavourite: 0
+    },
+    {
+    productId: 6,
+    name: "Grandma's Boysenberry Spread",
+    description: 3,
+    colour: 2,
+    activeFrom: "12 - 8 oz jars",
+    price: "25.0000",
+    activeTo: 120,
+    isFavourite: 0
+    },
+    {
+    productId: 7,
+    name: "Uncle Bob's Organic Dried Pears",
+    description: 3,
+    colour: 7,
+    activeFrom: "12 - 1 lb pkgs.",
+    price: "30.0000",
+    activeTo: 15,
+    isFavourite: 0
+    },
+    {
+    productId: 8,
+    name: "Northwoods Cranberry Sauce",
+    description: 3,
+    colour: 2,
+    activeFrom: "12 - 12 oz jars",
+    price: "40.0000",
+    activeTo: 6,
+    isFavourite: 0
+    },
+    {
+    productId: 9,
+    name: "Mishi Kobe Niku",
+    description: 4,
+    colour: 6,
+    activeFrom: "18 - 500 g pkgs.",
+    price: "97.0000",
+    activeTo: 29,
+    isFavourite: 0
+    },
+    {
+    productId: 10,
+    name: "Ikura",
+    description: 4,
+    colour: 8,
+    activeFrom: "12 - 200 ml jars",
+    price: "31.0000",
+    activeTo: 31,
+    isFavourite: 0
+    },
+    {
+    productId: 11,
+    name: "Queso Cabrales",
+    description: 5,
+    colour: 4,
+    activeFrom: "1 kg pkg.",
+    price: "21.0000",
+    activeTo: 22,
+    isFavourite: 30
+    },
+    {
+    productId: 12,
+    name: "Queso Manchego La Pastora",
+    description: 5,
+    colour: 4,
+    activeFrom: "10 - 500 g pkgs.",
+    price: "38.0000",
+    activeTo: 86,
+    isFavourite: 0
+    },
+    {
+    productId: 13,
+    name: "Konbu",
+    description: 6,
+    colour: 8,
+    activeFrom: "2 kg box",
+    price: "6.0000",
+    activeTo: 24,
+    isFavourite: 0
+    },
+    {
+    productId: 14,
+    name: "Tofu",
+    description: 6,
+    colour: 7,
+    activeFrom: "40 - 100 g pkgs.",
+    price: "23.2500",
+    activeTo: 35,
+    isFavourite: 0
+    },
+    {
+    productId: 15,
+    name: "Genen Shouyu",
+    description: 6,
+    colour: 2,
+    activeFrom: "24 - 250 ml bottles",
+    price: "15.5000",
+    activeTo: 39,
+    isFavourite: 0
+    },
+    {
+    productId: 16,
+    name: "Pavlova",
+    description: 7,
+    colour: 3,
+    activeFrom: "32 - 500 g boxes",
+    price: "17.4500",
+    activeTo: 29,
+    isFavourite: 0
+    },
+    {
+    productId: 17,
+    name: "Alice Mutton",
+    description: 7,
+    colour: 6,
+    activeFrom: "20 - 1 kg tins",
+    price: "39.0000",
+    activeTo: 0,
+    isFavourite: 0
+    },
+    {
+    productId: 18,
+    name: "Carnarvon Tigers",
+    description: 7,
+    colour: 8,
+    activeFrom: "16 kg pkg.",
+    price: "62.5000",
+    activeTo: 42,
+    isFavourite: 0
+    },
+    {
+    productId: 19,
+    name: "Teatime Chocolate Biscuits",
+    description: 8,
+    colour: 3,
+    activeFrom: "10 boxes x 12 pieces",
+    price: "9.2000",
+    activeTo: 25,
+    isFavourite: 0
+    },
+    {
+    productId: 20,
+    name: "Sir Rodney's Marmalade",
+    description: 8,
+    colour: 3,
+    activeFrom: "30 gift boxes",
+    price: "81.0000",
+    activeTo: 40,
+    isFavourite: 0
+    }
+    ],
+    odata.nextLink: "Products?$skiptoken=20"
+    }

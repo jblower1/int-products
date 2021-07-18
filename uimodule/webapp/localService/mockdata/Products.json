@@ -1,0 +1,25 @@
+{
+    "odata.metadata": "https://services.odata.org/Northwind/Northwind.svc/$metadata#Products",
+    "value": [
+    {
+        "productId": 1,
+        "name": "Chai",
+        "description": "Chai Tea - 10 boxes x 20 bags",
+        "colour": "Green",
+        "activeFrom": "2019-01-01T00:00:00",
+        "price": 18.00,
+        "activeTo": "2030-12-0211T00:00:00",
+        "isFavourite": true
+    },
+    {
+        "productId": 2,
+        "name": "Chang",
+        "description": "Chang Beer - 24 - 12 oz bottles",
+        "colour": 1,
+        "activeFrom": "2019-01-01T00:00:00",
+        "price": 101,
+        "activeTo": "2019-01-01T00:00:00",
+        "isFavourite": false
+        }],
+    "odata.nextLink": "Products?$skiptoken=20"
+}
