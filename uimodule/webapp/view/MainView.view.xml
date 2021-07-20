@@ -16,7 +16,13 @@
             </smartlist:listItemTemplate>
           </smartlist:SmartList> -->
           <List headerText="Products" items="{ path: '/Products' }">
-            <StandardListItem type="Navigation" title="{name}" description="{productId} : {description}" info="{price}"/>
+            <StandardListItem type="Navigation" 
+                              title="{name}" 
+                              description="{productId} : {description}" 
+                              info="{ path: 'price', formatter: '.formatter.priceDisplay' }"
+                              infoState="{ path: 'price', formatter: '.formatter.priceState' }" 
+                              />
+                              
           </List>
         </content>
       </Page>

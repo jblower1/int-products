@@ -18,7 +18,7 @@
                 <Property Name="activeFrom" Type="Edm.DateTime" Nullable="true" />
                 <Property Name="activeTo" Type="Edm.DateTime" Nullable="true" />
                 <Property Name="isFavourite" Type="Edm.String" Nullable="true" />
-                <Property Name="price" Type="Edm.double" Nullable="true" />
+                <Property Name="price" Type="Edm.Decimal" Scale="3" Nullable="true" />
             </EntityType>
             <EntityContainer Name="ProductEntities" m:IsDefaultEntityContainer="true">
                 <EntitySet Name="Products" EntityType="interview.Product" />
