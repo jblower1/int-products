@@ -1,4 +1,8 @@
 sap.ui.define([], function () {
     "use strict";
-    return {};
+    return {
+        priceState: function(price){
+            return price;
+        }
+    };
 });

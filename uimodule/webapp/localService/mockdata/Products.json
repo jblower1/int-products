@@ -7,7 +7,7 @@
         "activeFrom": "\/Date(1590105600000)\/",
         "activeTo": "\/Date(1590105600000)\/",
         "isFavourite": true,
-        "price": 18.00
+        "price": "£18.00"
     },
     {
         "productId": 2,
@@ -17,5 +17,5 @@
         "activeFrom": "\/Date(1590105600000)\/",
         "activeTo": "\/Date(1590105600000)\/",
         "isFavourite": false,
-        "price": 101
+        "price": "£101.00"
         }]
