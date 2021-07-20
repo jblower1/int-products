@@ -3,6 +3,9 @@ sap.ui.define(["interview/products/controller/BaseController"], function (Contro
 
     return Controller.extend("interview.products.controller.MainView", {
         onInit: function(){
+        },
+        onItemPress: function(){
+            return "";
         }
     });
 });

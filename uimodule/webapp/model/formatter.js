@@ -13,6 +13,12 @@ sap.ui.define([], function () {
             if (dps === -1)  precision = length + 2;
             else if (dps === length - 2 ) precision = length;
             return price.toPrecision(precision) ;
+        },
+        favouriteText: function(isFavourite){
+            return isFavourite ? "Yes" : "No" ;
+        },
+        favouriteState: function(isFavourite){
+            return isFavourite ? "Success" : "Error";
         }
     };
 });
