@@ -38,7 +38,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "rootView": {
-      "viewName": "interview.products.view.MainView",
+      "viewName": "interview.products.view.App",
       "type": "XML",
       "async": true,
       "id": "idAppControl"
@@ -91,17 +91,28 @@
       },
       "routes": [
         {
-          "name": "RouteMainView",
-          "pattern": "RouteMainView",
-          "target": ["TargetMainView"]
+          "name": "Worklist",
+          "pattern": "",
+          "target": ["worklist"]
+        },
+        {
+          "name": "Detail",
+          "pattern": "Product/{productId}",
+          "target": "detail"
         }
       ],
       "targets": {
-        "TargetMainView": {
+        "worklist": {
           "viewType": "XML",
           "viewLevel": 1,
-          "viewId": "idAppControl",
+          "viewId": "mainView",
           "viewName": "MainView"
+        },
+        "detail":{
+          "viewType": "XML",
+          "viewLevel": 2,
+          "viewId": "detailView",
+          "viewName": "DetailView"
         }
       }
     }

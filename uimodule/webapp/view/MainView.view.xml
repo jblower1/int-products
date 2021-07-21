@@ -3,8 +3,8 @@
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc"
   xmlns:smartlist="sap.ui.comp.smartlist">
-  <App id="idAppControl" >
-    <pages>
+  <!-- <App id="idAppControl" >
+    <pages> -->
       <Page title="{i18n>title}">
         <headerContent>
         
@@ -41,6 +41,6 @@
           </Table>
         </content>
       </Page>
-    </pages>
-  </App>
+    <!-- </pages>
+  </App> -->
 </mvc:View>
