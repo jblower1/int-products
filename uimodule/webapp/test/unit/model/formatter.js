@@ -44,7 +44,7 @@ sap.ui.define([
         priceFormatTest({
             assert: assert,
             price: 100,
-            expected: "100.00"
+            expected: "£100.00"
         });
     });
 
@@ -52,7 +52,7 @@ sap.ui.define([
         priceFormatTest({
             assert: assert,
             price: 100.5,
-            expected: "100.50"
+            expected: "£100.50"
         });
     });
 
@@ -60,7 +60,7 @@ sap.ui.define([
         priceFormatTest({
             assert: assert,
             price: 99.5,
-            expected: "99.50"
+            expected: "£99.50"
         });
     });
 
@@ -68,7 +68,7 @@ sap.ui.define([
         priceFormatTest({
             assert: assert,
             price: 99,
-            expected: "99.00"
+            expected: "£99.00"
         });
     });
 });

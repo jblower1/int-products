@@ -1,16 +1,77 @@
 <mvc:View controllerName="interview.products.controller.DetailView"
   displayBlock="true"
-  xmlns="sap.m"
+  xmlns="sap.uxap"
   xmlns:mvc="sap.ui.core.mvc"
-  xmlns:smartlist="sap.ui.comp.smartlist">
+  xmlns:layout="sap.ui.layout"
+  xmlns:m="sap.m">
   <!-- <App id="idAppControl" >
     <pages> -->
-      <Page title="{i18n>title}">
-        <content>
-            <Text text="Hello"/>
-        </content>
+    <!-- isChildPage="true"-->
+      <m:Page title="{i18n>title}">
+        <m:content>
+          <ObjectPageLayout
+            id="ProductDetail"
+            showTitleInHeaderContent="true"
+            alwaysShowContentHeader="false"
+            preserveHeaderStateOnScroll="false"
+            headerContentPinnable="true"
+            upperCaseAnchorBar="false">
+            <headerTitle>
+              <ObjectPageDynamicHeaderTitle>
+                <expandedHeading>
+                  <m:Title text="{name}"/>
+                </expandedHeading>
+                <snappedHeading>
+                  <m:Title text="{name}"/>
+                </snappedHeading>
+                <expandedContent>
+                  <m:ObjectNumber number="{path: 'price', formatter: '.formatter.priceDisplay'}"
+                                  state="{path: 'price', formatter: '.formatter.priceState'}"/>
+                </expandedContent>
+                <snappedContent>
+                  <m:ObjectNumber number="{path: 'price', formatter: '.formatter.priceDisplay'}"
+                                  state="{path: 'price', formatter: '.formatter.priceState'}"/>
+                </snappedContent>
+                <actions>
+                  <m:Button
+                    tooltip="{i18n>favouriteTooltip}"
+                    icon="{ path: 'isFavourite', formatter: '.formatter.favouriteIcon' }"
+                    type="Transparent"
+                    press="switchFavourite"/>
+                  <m:ToggleButton
+                    text="Edit"
+                    type="Emphasized"/>
+                  <m:Button
+                    text="Delete"
+                    type="Transparent"/>
+                </actions>
+              </ObjectPageDynamicHeaderTitle>
+            </headerTitle>
+            <headerContent>
+              <m:FlexBox>
+                <layout:HorizontalLayout >
+                  <layout:VerticalLayout class="sapUiLargeMarginEnd">
+                  <m:Label text="Description"/>
+                  <m:Text text="{description}"/>
+                </layout:VerticalLayout>
+                <layout:VerticalLayout class="sapUiLargeMarginEnd">
+                  <m:Label text="Product ID"/>
+                  <m:Text text="{productId}"/>
+                </layout:VerticalLayout>
+                <layout:VerticalLayout class="sapUiLargeMarginEnd">
+                  <m:Label text="Colour"/>
+                  <m:Text text="{colour}"/>
+                </layout:VerticalLayout>
+                </layout:HorizontalLayout>
+                
+              </m:FlexBox>
+            </headerContent>
+            <sections>
+            </sections>
+          </ObjectPageLayout>
+        </m:content>
         
-      </Page>
+      </m:Page>
     <!-- </pages>
   </App> -->
 </mvc:View>

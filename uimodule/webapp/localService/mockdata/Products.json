@@ -1,6 +1,6 @@
 [
     {
-        "productId": 1,
+        "productId": "P5782",
         "name": "Chai",
         "description": "Chai Tea - 10 boxes x 20 bags",
         "colour": "Green",
@@ -10,10 +10,10 @@
         "price": 18.00
     },
     {
-        "productId": 2,
+        "productId": "P24278",
         "name": "Chang",
         "description": "Chang Beer - 24 - 12 oz bottles",
-        "colour": 1,
+        "colour": "Orange",
         "activeFrom": "\/Date(1590105600000)\/",
         "activeTo": "\/Date(1590105600000)\/",
         "isFavourite": false,
