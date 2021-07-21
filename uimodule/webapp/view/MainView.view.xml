@@ -3,22 +3,11 @@
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc"
   xmlns:smartlist="sap.ui.comp.smartlist">
-  <!-- <App id="idAppControl" >
-    <pages> -->
       <Page title="{i18n>title}">
         <headerContent>
         
         </headerContent>
         <content>
-          <!-- <List headerText="Products" items="{ path: '/Products' }">
-            <StandardListItem type="Navigation" 
-                              title="{name}" 
-                              description="{productId} : {description}" 
-                              info="{ path: 'price', formatter: '.formatter.priceDisplay' }"
-                              infoState="{ path: 'price', formatter: '.formatter.priceState' }" 
-                              />
-                              
-          </List> -->
           <Table items="{path: '/Products'}">
             <columns>
               <Column id="productCol"><Text text="{i18n>productCol}"/></Column>
@@ -32,7 +21,8 @@
                   <ObjectIdentifier title="{name}" text="{i18n>id}: {productId}"/>
                   <Text text="{description}"/>
                   <ObjectStatus text="{ path: 'isFavourite', formatter: '.formatter.favouriteText' }"
-                                state="{ path: 'isFavourite', formatter: '.formatter.favouriteState' }"/>
+                                state="{ path: 'isFavourite', formatter: '.formatter.favouriteState' }"
+                                icon="{ path: 'isFavourite', formatter: '.formatter.favouriteIcon' }"/>
                   <ObjectNumber number="{path: 'price', formatter: '.formatter.priceDisplay'}"
                                 state="{path: 'price', formatter: '.formatter.priceState'}"/>
                 </cells>
@@ -41,6 +31,4 @@
           </Table>
         </content>
       </Page>
-    <!-- </pages>
-  </App> -->
 </mvc:View>

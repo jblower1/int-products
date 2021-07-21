@@ -18,7 +18,10 @@ sap.ui.define([], function () {
             return isFavourite ? "Yes" : "No" ;
         },
         favouriteState: function(isFavourite){
-            return isFavourite ? "Success" : "Error";
+            return isFavourite ? "Success" : "None";
+        },
+        favouriteIcon: function(isFavourite){
+            return isFavourite ? "sap-icon://favorite" : "sap-icon://unfavorite";
         }
     };
 });
