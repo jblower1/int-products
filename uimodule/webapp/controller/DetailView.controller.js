@@ -23,13 +23,13 @@ sap.ui.define([
             this.objectModel.setProperty("/editable", false);
         },
         pressEdit: function(oEvent){
-            //toggle pressed property
-            oEvent.getSource().setPressed(!oEvent.getSource().getPressed());
-            //updatge editable model to open up fields
             let editable = this.objectModel.getProperty("/editable");
-            this.objectModel.setProperty("/editable", !editable);
-
-            this.objectModel.setProperty("/description", this.getView().byId("descriptionInput").getValue());
+            if (!editable){ //make it editable
+                this.objectModel.setProperty("/editable", true);
+            } else {
+                this.getView().getModel().resetChanges();
+                this.objectModel.setProperty("/editable", false);
+            }
         },
         switchFavourite: function(oControlEvent){
             const button = oControlEvent.getSource();
