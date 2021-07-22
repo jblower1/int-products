@@ -34,6 +34,20 @@ sap.ui.require([
               },
               errorMessage: "App does not show the expected title interview.products"
             });
+        },
+        iShouldSeeItems: function(){
+          return this.waitFor({
+            id: "productsTable",
+            viewName: "MainView",
+            matchers: new AggregationLengthEquals({
+              name: "items",
+              length: 7
+            }),
+            success: function(){
+              Opa5.assert.ok(true, "The table has 7 items");
+            },
+            errorMessage: "The table does not contain 7 items"
+          });
         }
       }
 

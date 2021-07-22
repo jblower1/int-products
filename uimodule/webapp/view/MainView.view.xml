@@ -8,7 +8,7 @@
         
         </headerContent>
         <content>
-          <Table items="{path: '/Products'}">
+          <Table id="productsTable" items="{path: '/Products'}">
             <columns>
               <Column id="productCol"><Text text="{i18n>productCol}"/></Column>
               <Column id="descriptionCol"><Text text="{i18n>descriptionCol}"/></Column>

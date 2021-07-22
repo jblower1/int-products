@@ -5,6 +5,7 @@
     "start": "ui5 serve --config=uimodule/ui5.yaml  --open index.html",
     "start-mock": "ui5 serve --config=uimodule/ui5.yaml  --open test/mockServer.html",
     "unit-test": "ui5 serve --config=uimodule/ui5.yaml  --open test/unit/unitTests.qunit.html",
+    "int-test": "ui5 serve --config=uimodule/ui5.yaml  --open test/integration/opaTests.qunit.html",
     "build:ui": "run-s  build:uimodule",
     "test": "run-s lint karma",
     "karma-ci": "karma start karma-ci.conf.js",

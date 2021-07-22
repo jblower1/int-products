@@ -14,7 +14,8 @@ sap.ui.define([
     // When.onTheMainPage.iPressTheButton();
 
     // Assertions
-    Then.onTheMainPage.iShouldSeeTheTitle();
+    // Then.onTheMainPage.iShouldSeeTheTitle();
+    Then.onTheMainPage.iShouldSeeItems();
 
     // Cleanup
     Then.iTeardownMyApp();
