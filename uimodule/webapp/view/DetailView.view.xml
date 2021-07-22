@@ -44,6 +44,7 @@
                     type="Emphasized"/>
                   <m:Button
                     text="{i18n>Save}"
+                    press="onSave"
                     enabled="{= !!${Object>/editable} }"
                     type="Transparent"/>
                 </actions>
@@ -84,8 +85,6 @@
                             <m:Label text="{i18n>Description}"/>
                             <m:Input id="descriptionInput" value="{description}" enabled="{= !!${Object>/editable} }"/>
                           </layout:VerticalLayout>
-                        </layout:HorizontalLayout>
-                        <layout:HorizontalLayout >
                           <layout:VerticalLayout class="sapUiLargeMarginEnd">
                             <m:Label text="{i18n>Colour}"/>
                             <m:Input id="colourInput" value="{colour}" enabled="{= !!${Object>/editable} }"/>

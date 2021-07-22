@@ -61,6 +61,12 @@ sap.ui.define([
           },
           setFavourite: function(isFavourite){
             this.getView().getModel().update("/Products", {productId: this.productId, isFavourite: isFavourite});
+          },
+          onSave: function(){
+            this.getView().getModel().attachEventOnce("batchRequestCompleted", function(oData){
+                this.objectModel.setProperty("/editable", false);
+            }.bind(this));
+            this.getView().getModel().submitChanges();
           }
     });
 });
