@@ -1,4 +1,7 @@
-sap.ui.define(["interview/products/controller/BaseController"], function (Controller) {
+sap.ui.define([
+    "interview/products/controller/BaseController",
+    "sap/m/MessageToast"
+], function (Controller, MessageToast) {
     "use strict";
 
     return Controller.extend("interview.products.controller.DetailView", {
@@ -10,15 +13,16 @@ sap.ui.define(["interview/products/controller/BaseController"], function (Contro
             this.getRouter().getRoute("Detail").attachPatternMatched(this._onObjectMatched, this)
         },
         _onObjectMatched: function(oEvent){
-            let productId = oEvent.getParameter("arguments").productId;
+            this.productId = oEvent.getParameter("arguments").productId;
             let view = this.getView();
             view.bindElement({
-                path: "/Products(productId='" + productId + "')"
+                path: "/Products(productId='" + this.productId + "')"
             });
         },
-        switchFavourite: function(){
+        switchFavourite: function(oControlEvent){
             // let isFavourite = this.getView().getBindingContext().getProperty("isFavourite");
             // this.getView().getBindingContext().s
+            this.markAsFav(oControlEvent);
         },
         initialiseObjectModel: function(){
             this.objectModel.setProperty("/editable", false);
@@ -41,6 +45,22 @@ sap.ui.define(["interview/products/controller/BaseController"], function (Contro
             this.objectModel.setProperty("/editable", !editable);
 
             this.objectModel.setProperty("/description", this.getView().byId("descriptionInput").getValue());
-        }
+        },
+        markAsFav: function(oControlEvent){
+            const button = oControlEvent.getSource();
+            this.getView().getBindingContext().getProperty("isFavourite");
+            if (button.getIcon() === "sap-icon://unfavorite"){
+              button.setIcon("sap-icon://favorite");
+              this.setFavourite(true);
+              MessageToast.show("Added to Favourites");
+              return;
+            }
+            button.setIcon("sap-icon://unfavorite");
+            this.setFavourite(false);
+            MessageToast.show("Removed from Favourites");
+          },
+          setFavourite: function(isFavourite){
+            this.getView().getModel().update("/Products", {productId: this.productId, isFavourite: isFavourite});
+          }
     });
 });
