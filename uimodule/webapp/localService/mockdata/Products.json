@@ -18,4 +18,55 @@
         "activeTo": "\/Date(1590105600000)\/",
         "isFavourite": false,
         "price": 101.50
-        }]
+    },
+    {
+        "productId": "P24348",
+        "name": "Kellog's Frosties",
+        "description": "Kellog's Frosties - 100 - 500g Boxes",
+        "colour": "Blue",
+        "activeFrom": "\/Date(1590105600000)\/",
+        "activeTo": "\/Date(1590105600000)\/",
+        "isFavourite": true,
+        "price": 99.99
+    },
+    {
+        "productId": "PN111",
+        "name": "PG Tips",
+        "description": "PG Tips Tea Bags - 500 Tea Bags",
+        "colour": "White",
+        "activeFrom": "\/Date(1590105600000)\/",
+        "activeTo": "\/Date(1590105600000)\/",
+        "isFavourite": false,
+        "price": 3.50
+    },
+    {
+        "productId": "P34875",
+        "name": "Strongbow",
+        "description": "Strongbow Cider - 6 - 330ml Cans",
+        "colour": "Gold",
+        "activeFrom": "\/Date(1590105600000)\/",
+        "activeTo": "\/Date(1590105600000)\/",
+        "isFavourite": false,
+        "price": 5.00
+    },
+    {
+        "productId": "H23475",
+        "name": "Hovis Bread",
+        "description": "Hovis Best of Both - 100 Loaves",
+        "colour": "White/Green",
+        "activeFrom": "\/Date(1590105600000)\/",
+        "activeTo": "\/Date(1590105600000)\/",
+        "isFavourite": true,
+        "price": 100
+    },
+    {
+        "productId": "Z36575",
+        "name": "Warburtons Toastie Bread",
+        "description": "Warburtons Thick White Toastie Bread - 1 Loaf",
+        "colour": "Orange",
+        "activeFrom": "\/Date(1590105600000)\/",
+        "activeTo": "\/Date(1590105600000)\/",
+        "isFavourite": false,
+        "price": 2.00
+    }
+]

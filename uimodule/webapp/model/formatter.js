@@ -12,14 +12,12 @@ sap.ui.define([], function () {
                 let dps = sPrice.indexOf(".");
                 let precision = 0;
                 if (dps === -1)  precision = length + 2;
-                else if (dps === length - 2 ) precision = length;
+                else if (dps === length - 2) precision = length;
+                else if (dps === length - 3) precision = length - 1;
                 return price.toPrecision(precision) ;
             } else {
                 return "";
             }
-        },
-        favouriteText: function(isFavourite){
-            return isFavourite ? "Yes" : "No" ;
         },
         favouriteState: function(isFavourite){
             return isFavourite ? "Success" : "None";

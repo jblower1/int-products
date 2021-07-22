@@ -3,7 +3,7 @@
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc"
   xmlns:smartlist="sap.ui.comp.smartlist">
-      <Page title="{i18n>title}">
+      <Page title="{i18n>worklistTitle}">
         <headerContent>
         
         </headerContent>
@@ -20,10 +20,10 @@
                 <cells>
                   <ObjectIdentifier title="{name}" text="{i18n>id}: {productId}"/>
                   <Text text="{description}"/>
-                  <ObjectStatus text="{ path: 'isFavourite', formatter: '.formatter.favouriteText' }"
+                  <ObjectStatus text="{= ${isFavourite} ? ${i18n>Yes} : ${i18n>No} }"
                                 state="{ path: 'isFavourite', formatter: '.formatter.favouriteState' }"
                                 icon="{ path: 'isFavourite', formatter: '.formatter.favouriteIcon' }"/>
-                  <ObjectNumber number="{path: 'price', formatter: '.formatter.priceDisplay'}"
+                  <ObjectNumber number="£{path: 'price', formatter: '.formatter.priceDisplay'}"
                                 state="{path: 'price', formatter: '.formatter.priceState'}"/>
                 </cells>
               </ColumnListItem>

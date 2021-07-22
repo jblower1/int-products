@@ -4,7 +4,7 @@
   xmlns:mvc="sap.ui.core.mvc"
   xmlns:layout="sap.ui.layout"
   xmlns:m="sap.m">
-      <m:Page title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack">
+      <m:Page title="{i18n>detailTitle}" showNavButton="true" navButtonPress="onNavBack">
         <m:content>
           <ObjectPageLayout
             id="ProductDetail"
@@ -53,22 +53,22 @@
               <m:FlexBox>
                 <layout:HorizontalLayout >
                   <layout:VerticalLayout class="sapUiLargeMarginEnd">
-                  <m:Label text="Description"/>
+                  <m:Label text="{i18n>Description}"/>
                   <m:Text text="{description}"/>
                 </layout:VerticalLayout>
                 <layout:VerticalLayout class="sapUiLargeMarginEnd">
-                  <m:Label text="Product ID"/>
+                  <m:Label text="{i18n>id}"/>
                   <m:Text text="{productId}"/>
                 </layout:VerticalLayout>
                 <layout:VerticalLayout class="sapUiLargeMarginEnd">
-                  <m:Label text="Colour"/>
+                  <m:Label text="{i18n>Colour}"/>
                   <m:Text text="{colour}"/>
                 </layout:VerticalLayout>
                 </layout:HorizontalLayout>
               </m:FlexBox>
             </headerContent>
             <sections>
-              <ObjectPageSection titleUppercase="false" id="editSection" title="Properties">
+              <ObjectPageSection titleUppercase="false" id="editSection" title="{i18n>Properties}">
                 <subSections>
                   <ObjectPageSubSection id="detailsSubSection" title="{i18n>Details}">
                     <blocks>
@@ -119,6 +119,5 @@
             </sections>
           </ObjectPageLayout>
         </m:content>
-        
       </m:Page>
 </mvc:View>

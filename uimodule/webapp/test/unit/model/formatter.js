@@ -71,4 +71,20 @@ sap.ui.define([
             expected: "99.00"
         });
     });
+
+    QUnit.test("Should format product prices with 2 dp, 2 dp source, 2 digit number", function(assert){
+        priceFormatTest({
+            assert: assert,
+            price: 99.99,
+            expected: "99.99"
+        });
+    });
+
+    QUnit.test("Should format product prices with 2 dp, 1 dp source, 1 digit number", function(assert){
+        priceFormatTest({
+            assert: assert,
+            price: 3.5,
+            expected: "3.50"
+        });
+    });
 });

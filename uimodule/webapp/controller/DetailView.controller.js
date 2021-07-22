@@ -19,11 +19,6 @@ sap.ui.define([
                 path: "/Products(productId='" + this.productId + "')"
             });
         },
-        // switchFavourite: function(oControlEvent){
-        //     // let isFavourite = this.getView().getBindingContext().getProperty("isFavourite");
-        //     // this.getView().getBindingContext().s
-        //     this.markAsFav(oControlEvent);
-        // },
         initialiseObjectModel: function(){
             this.objectModel.setProperty("/editable", false);
         },
@@ -41,27 +36,16 @@ sap.ui.define([
             this.getView().getBindingContext().getProperty("isFavourite");
             if (button.getIcon() === "sap-icon://unfavorite"){
               button.setIcon("sap-icon://favorite");
-              this.setFavourite(true);
-              MessageToast.show("Added to Favourites");
+              MessageToast.show(this.getResourceBundle().getText("FavouriteAdded"));
               return;
             }
             button.setIcon("sap-icon://unfavorite");
-            this.setFavourite(false);
-            MessageToast.show("Removed from Favourites");
-          },
-          setFavourite: function(isFavourite){
-            // this.getView().getModel().attachEventOnce("batchRequestCompleted", function(){
-            //     let message = isFavourite ? "Added to Favourites" : "Removed from Favourites";
-            //     MessageToast.show(message);
-            // });
-            // this.getView().getModel().update("/Products", {productId: this.productId, isFavourite: isFavourite});
-            // this.getView().getModel().setProperty("/Products(productId='" + this.productId + "')/isFavourite", isFavourite);
-            // this.getView().getModel().submitChanges();
+            MessageToast.show(this.getResourceBundle().getText("FavouriteRemoved"));
           },
           onSave: function(){
             this.getView().getModel().attachEventOnce("batchRequestCompleted", function(){
                 this.objectModel.setProperty("/editable", false);
-                let message = "Object Updated";
+                let message = this.getResourceBundle().getText("ObjectUpdated");
                 MessageToast.show(message);
             }.bind(this));
             this.getView().getModel().submitChanges();
