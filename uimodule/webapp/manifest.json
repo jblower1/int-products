@@ -71,7 +71,10 @@
           "preload": true
         },
         "dataSource": "products"
-      }      
+      } ,
+      "Object": {
+				"type": "sap.ui.model.json.JSONModel"
+			}     
     },
     "resources": {
       "css": [

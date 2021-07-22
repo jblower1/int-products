@@ -13,7 +13,7 @@ sap.ui.define([], function () {
                 let precision = 0;
                 if (dps === -1)  precision = length + 2;
                 else if (dps === length - 2 ) precision = length;
-                return "£" + price.toPrecision(precision) ;
+                return price.toPrecision(precision) ;
             } else {
                 return "";
             }

@@ -22,10 +22,10 @@
                   <m:Title text="{name}"/>
                 </expandedHeading>
                 <snappedHeading>
-                  <m:Title text="{name}"/>
+                  <m:Title text="{name}" visible="{= !${Object>/editable} }"/>
                 </snappedHeading>
                 <expandedContent>
-                  <m:ObjectNumber number="{path: 'price', formatter: '.formatter.priceDisplay'}"
+                  <m:ObjectNumber number="£{path: 'price', formatter: '.formatter.priceDisplay'}"
                                   state="{path: 'price', formatter: '.formatter.priceState'}"/>
                 </expandedContent>
                 <snappedContent>
@@ -39,10 +39,12 @@
                     type="Transparent"
                     press="switchFavourite"/>
                   <m:ToggleButton
-                    text="Edit"
+                    text="{= ${Object>/editable} ? ${i18n>Cancel} : ${i18n>Edit} }"
+                    press="pressEdit"
                     type="Emphasized"/>
                   <m:Button
-                    text="Delete"
+                    text="{i18n>Save}"
+                    enabled="{= !!${Object>/editable} }"
                     type="Transparent"/>
                 </actions>
               </ObjectPageDynamicHeaderTitle>
@@ -67,6 +69,56 @@
               </m:FlexBox>
             </headerContent>
             <sections>
+              <ObjectPageSection titleUppercase="false" id="editSection" title="Properties">
+                <subSections>
+                  <ObjectPageSubSection id="detailsSubSection" title="{i18n>Details}">
+                    <blocks>
+                      <m:FlexBox>
+                        <layout:VerticalLayout>
+                        <layout:HorizontalLayout >
+                          <layout:VerticalLayout class="sapUiLargeMarginEnd">
+                            <m:Label text="{i18n>Name}"/>
+                            <m:Input id="nameInput" value="{name}" enabled="{= !!${Object>/editable} }"/>
+                          </layout:VerticalLayout>
+                          <layout:VerticalLayout class="sapUiLargeMarginEnd">
+                            <m:Label text="{i18n>Description}"/>
+                            <m:Input id="descriptionInput" value="{description}" enabled="{= !!${Object>/editable} }"/>
+                          </layout:VerticalLayout>
+                        </layout:HorizontalLayout>
+                        <layout:HorizontalLayout >
+                          <layout:VerticalLayout class="sapUiLargeMarginEnd">
+                            <m:Label text="{i18n>Colour}"/>
+                            <m:Input id="colourInput" value="{colour}" enabled="{= !!${Object>/editable} }"/>
+                          </layout:VerticalLayout>
+                          <layout:VerticalLayout class="sapUiLargeMarginEnd">
+                            <m:Label text="{i18n>Price} (£)"/>
+                            <m:Input id="priceInput" value="{ path: 'price', formatter: '.formatter.priceDisplay' }" enabled="{= !!${Object>/editable} }"/>
+                          </layout:VerticalLayout>
+                        </layout:HorizontalLayout>
+                        </layout:VerticalLayout>
+                      </m:FlexBox>
+                    </blocks>
+                  </ObjectPageSubSection>
+                  <ObjectPageSubSection id="datesSubSection" title="{i18n>ValidityDates}">
+                    <blocks>
+                      <m:FlexBox>
+                        <layout:VerticalLayout>
+                        <layout:HorizontalLayout>
+                          <layout:VerticalLayout class="sapUiLargeMarginEnd">
+                            <m:Label text="{i18n>ActiveFrom}"/>
+                            <m:DatePicker dateValue="{activeFrom}" enabled="{= !!${Object>/editable} }"/>
+                          </layout:VerticalLayout>
+                          <layout:VerticalLayout class="sapUiLargeMarginEnd">
+                            <m:Label text="{i18n>ActiveTo}"/>
+                            <m:DatePicker dateValue="{activeTo}" enabled="{= !!${Object>/editable} }"/>
+                          </layout:VerticalLayout>
+                        </layout:HorizontalLayout>
+                        </layout:VerticalLayout>
+                      </m:FlexBox>
+                    </blocks>
+                  </ObjectPageSubSection>
+                </subSections>
+              </ObjectPageSection>
             </sections>
           </ObjectPageLayout>
         </m:content>
