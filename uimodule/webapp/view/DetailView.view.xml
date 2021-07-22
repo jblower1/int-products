@@ -7,7 +7,7 @@
   <!-- <App id="idAppControl" >
     <pages> -->
     <!-- isChildPage="true"-->
-      <m:Page title="{i18n>title}">
+      <m:Page title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack">
         <m:content>
           <ObjectPageLayout
             id="ProductDetail"
