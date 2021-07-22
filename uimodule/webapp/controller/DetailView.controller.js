@@ -19,23 +19,13 @@ sap.ui.define([
                 path: "/Products(productId='" + this.productId + "')"
             });
         },
-        switchFavourite: function(oControlEvent){
-            // let isFavourite = this.getView().getBindingContext().getProperty("isFavourite");
-            // this.getView().getBindingContext().s
-            this.markAsFav(oControlEvent);
-        },
+        // switchFavourite: function(oControlEvent){
+        //     // let isFavourite = this.getView().getBindingContext().getProperty("isFavourite");
+        //     // this.getView().getBindingContext().s
+        //     this.markAsFav(oControlEvent);
+        // },
         initialiseObjectModel: function(){
             this.objectModel.setProperty("/editable", false);
-            // this.objectModel.setData({
-            //     editable: false
-            //     // name: "",
-            //     // description: "",
-            //     // colour: "",
-            //     // activeFrom: "",
-            //     // activeTo: "",
-            //     // isFavourite: "",
-            //     // price: ""
-            // });
         },
         pressEdit: function(oEvent){
             //toggle pressed property
@@ -46,7 +36,7 @@ sap.ui.define([
 
             this.objectModel.setProperty("/description", this.getView().byId("descriptionInput").getValue());
         },
-        markAsFav: function(oControlEvent){
+        switchFavourite: function(oControlEvent){
             const button = oControlEvent.getSource();
             this.getView().getBindingContext().getProperty("isFavourite");
             if (button.getIcon() === "sap-icon://unfavorite"){
@@ -60,11 +50,19 @@ sap.ui.define([
             MessageToast.show("Removed from Favourites");
           },
           setFavourite: function(isFavourite){
-            this.getView().getModel().update("/Products", {productId: this.productId, isFavourite: isFavourite});
+            // this.getView().getModel().attachEventOnce("batchRequestCompleted", function(){
+            //     let message = isFavourite ? "Added to Favourites" : "Removed from Favourites";
+            //     MessageToast.show(message);
+            // });
+            // this.getView().getModel().update("/Products", {productId: this.productId, isFavourite: isFavourite});
+            // this.getView().getModel().setProperty("/Products(productId='" + this.productId + "')/isFavourite", isFavourite);
+            // this.getView().getModel().submitChanges();
           },
           onSave: function(){
-            this.getView().getModel().attachEventOnce("batchRequestCompleted", function(oData){
+            this.getView().getModel().attachEventOnce("batchRequestCompleted", function(){
                 this.objectModel.setProperty("/editable", false);
+                let message = "Object Updated";
+                MessageToast.show(message);
             }.bind(this));
             this.getView().getModel().submitChanges();
           }

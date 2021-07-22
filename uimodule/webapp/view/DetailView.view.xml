@@ -4,9 +4,6 @@
   xmlns:mvc="sap.ui.core.mvc"
   xmlns:layout="sap.ui.layout"
   xmlns:m="sap.m">
-  <!-- <App id="idAppControl" >
-    <pages> -->
-    <!-- isChildPage="true"-->
       <m:Page title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack">
         <m:content>
           <ObjectPageLayout
@@ -29,24 +26,26 @@
                                   state="{path: 'price', formatter: '.formatter.priceState'}"/>
                 </expandedContent>
                 <snappedContent>
-                  <m:ObjectNumber number="{path: 'price', formatter: '.formatter.priceDisplay'}"
+                  <m:ObjectNumber number="£{path: 'price', formatter: '.formatter.priceDisplay'}"
                                   state="{path: 'price', formatter: '.formatter.priceState'}"/>
                 </snappedContent>
                 <actions>
-                  <m:Button
+                  <m:ToggleButton
                     tooltip="{i18n>favouriteTooltip}"
                     icon="{ path: 'isFavourite', formatter: '.formatter.favouriteIcon' }"
                     type="Transparent"
-                    press="switchFavourite"/>
-                  <m:ToggleButton
-                    text="{= ${Object>/editable} ? ${i18n>Cancel} : ${i18n>Edit} }"
-                    press="pressEdit"
-                    type="Emphasized"/>
+                    enabled="{= !!${Object>/editable} }"
+                    press="switchFavourite"
+                    pressed="{isFavourite}"/>
                   <m:Button
                     text="{i18n>Save}"
                     press="onSave"
                     enabled="{= !!${Object>/editable} }"
                     type="Transparent"/>
+                  <m:ToggleButton
+                    text="{= ${Object>/editable} ? ${i18n>Cancel} : ${i18n>Edit} }"
+                    press="pressEdit"
+                    type="{= ${Object>/editable} ? 'Negative' : 'Emphasized' }"/>
                 </actions>
               </ObjectPageDynamicHeaderTitle>
             </headerTitle>
@@ -66,7 +65,6 @@
                   <m:Text text="{colour}"/>
                 </layout:VerticalLayout>
                 </layout:HorizontalLayout>
-                
               </m:FlexBox>
             </headerContent>
             <sections>
@@ -123,6 +121,4 @@
         </m:content>
         
       </m:Page>
-    <!-- </pages>
-  </App> -->
 </mvc:View>
