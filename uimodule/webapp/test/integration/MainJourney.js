@@ -34,7 +34,9 @@ sap.ui.define([
     When.onTheDetailPage.iPressTheEditButton();
     // Then.onTheDetailPage.iShouldSeeTheDetailPage();
     Then.onTheDetailPage.theFieldsShouldBeEditable();
+
     Then.iTeardownMyApp();
   });
+
 
 });
