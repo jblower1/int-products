@@ -5,7 +5,7 @@ sap.ui.require([
 ], function (Opa5, AggregationLengthEquals, I18NText) {
   "use strict";
 
-  var sViewName = "interview.products.view.MainView";
+  var sViewName = "MainView";
 
   Opa5.createPageObjects({
     onTheMainPage: {

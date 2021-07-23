@@ -5,7 +5,7 @@ sap.ui.require([
   ], function (Opa5, I18NText, Press) {
     "use strict";
 
-    var sDetailViewName = "interview.products.DetailView";
+    var sDetailViewName = "DetailView";
 
     Opa5.createPageObjects({
       onTheDetailPage: {

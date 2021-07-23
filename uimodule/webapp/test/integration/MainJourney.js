@@ -10,9 +10,6 @@ sap.ui.define([
     // Arrangements
     Given.iStartMyApp();
 
-    // Actions
-    // When.onTheMainPage.iPressTheButton();
-
     // Assertions
     Then.onTheMainPage.iShouldSeeTheTitle();
   });
