@@ -43,6 +43,7 @@
                     enabled="{= !!${Object>/editable} }"
                     type="Transparent"/>
                   <m:Button
+                    id="editButton"
                     text="{= ${Object>/editable} ? ${i18n>Cancel} : ${i18n>Edit} }"
                     press="pressEdit"
                     type="{= ${Object>/editable} ? 'Negative' : 'Emphasized' }"/>

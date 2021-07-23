@@ -5,7 +5,7 @@ sap.ui.define([
 ], function (opaTest) {
   "use strict";
 
-  opaTest("Should see the page", function (Given, When, Then) {
+  opaTest("Should see the worklist page with title", function (Given, When, Then) {
 
     // Arrangements
     Given.iStartMyApp();
@@ -14,11 +14,10 @@ sap.ui.define([
     // When.onTheMainPage.iPressTheButton();
 
     // Assertions
-    // Then.onTheMainPage.iShouldSeeTheTitle();
-    Then.onTheMainPage.iShouldSeeItems();
-
-    // Cleanup
-    Then.iTeardownMyApp();
+    Then.onTheMainPage.iShouldSeeTheTitle();
   });
 
+  opaTest("Should see the table", function(Given, When, Then){
+    Then.onTheMainPage.iShouldSeeThetable();
+  });
 });

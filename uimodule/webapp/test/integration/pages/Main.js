@@ -1,7 +1,8 @@
 sap.ui.require([
   "sap/ui/test/Opa5",
-  "sap/ui/test/actions/Press"
-], function (Opa5, Press) {
+  "sap/ui/test/matchers/AggregationLengthEquals",
+  "sap/ui/test/matchers/I18NText"
+], function (Opa5, AggregationLengthEquals, I18NText) {
   "use strict";
 
   var sViewName = "interview.products.view.MainView";
@@ -11,34 +12,38 @@ sap.ui.require([
       viewName: sViewName,
 
       actions: {
-        // add action functions here
-        iPressTheButton: function () {
-          return this.waitFor({
-            controlType: "sap.m.Button",
-            actions: new Press(),
-            errorMessage: "App does not have a button"
-          });
-        }
+
       },
 
       assertions: {
           // add assertion functions here
           iShouldSeeTheTitle: function () {
             return this.waitFor({
-              controlType: "sap.m.Title",
-              properties: {
-                text: "interview.products"
-              },
+              controlType: "sap.m.Page",
+              matchers: new I18NText({
+                key: "worklistTitle",
+                propertyName: "title"
+              }),
               success: function() {
-                Opa5.assert.ok(true, "The page shows the correct title");
+                Opa5.assert.ok(true, "The main page shows the correct title");
               },
-              errorMessage: "App does not show the expected title interview.products"
+              errorMessage: "App does not show the expected title"
             });
+        },
+        iShouldSeeThetable: function(){
+          return this.waitFor({
+            id: "productsTable",
+            viewName: sViewName,
+            controlType: "sap.m.Table",
+            success: function(){
+              Opa5.assert.ok(true, "The main page shows the products table");
+            }
+          });
         },
         iShouldSeeItems: function(){
           return this.waitFor({
             id: "productsTable",
-            viewName: "MainView",
+            viewName: sViewName,
             matchers: new AggregationLengthEquals({
               name: "items",
               length: 7
@@ -50,7 +55,6 @@ sap.ui.require([
           });
         }
       }
-
     }
   });
 
