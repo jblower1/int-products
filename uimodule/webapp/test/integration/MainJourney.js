@@ -24,14 +24,11 @@ sap.ui.define([
     // When.onTheMainPage.iChangeTheHashToTheObjectItem();
     When.onTheMainPage.iPressOnTheItemWithTheID("P5782");
     Then.onTheDetailPage.iShouldSeeTheTitle();
-    // Cleanup
-    // Then.iTeardownMyApp();
+
   });
 
   opaTest("Should see editable fields when the edit button is pressed", function(Given, When, Then){
     // When.onTheDetailPage.iChangeTheHashToTheObjectItem();
-    // Given.iStartMyApp();
-    // When.onTheMainPage.iNavigateToTheDetailPage();
     When.onTheMainPage.iChangeTheHashToTheObjectItem();
     // When.onTheDetailPage.iPressTheEditButton();
     Then.onTheDetailPage.iShouldSeeTheDetailPage();
