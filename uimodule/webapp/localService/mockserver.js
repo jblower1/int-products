@@ -11,15 +11,17 @@ sap.ui.define([
 		 * The local mock data in this folder is returned instead of the real data for testing.
 		 * @public
 		 */
-		init: function() {
+		init: function(fromTests) {
 			// create
 			var oMockServer = new MockServer({
 				rootUri: "/productsService/"
 			});
 
 			// simulate against the metadata and mock data
-			oMockServer.simulate("../localService/metadata.xml", {
-				sMockdataBaseUrl: "../localService/mockdata",
+			let sPath = fromTests ? "../../localService" : "../localService";
+
+			oMockServer.simulate(sPath + "/metadata.xml", {
+				sMockdataBaseUrl: sPath + "/mockdata",
 				bGenerateMissingMockData: true
 			});
 

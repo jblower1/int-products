@@ -13,21 +13,12 @@ sap.ui.require([
         actions: {
           iPressTheEditButton: function(){
             return this.waitFor({
-              viewName: sDetailViewName,
               id: "editButton",
               controlType: "sap.m.Button",
               actions: new Press(),
               errorMessage: "The detail page does not have an edit button"
             });
-          },
-          iChangeTheHashToTheObjectItem: function () {
-            return this.waitFor({
-                success: function () {
-                    // var sObjectId = this.getContext().currentItem.id;
-                    Opa5.getHashChanger().setHash("Product/" + "TESTID");
-                }
-            });
-        }
+          }
         },
         assertions: {
           iShouldSeeTheTitle: function(){
@@ -44,9 +35,19 @@ sap.ui.require([
               errorMessage: "The detail page does not show the correct title"
             });
           },
+          iShouldSeeTheDetailPage: function(){
+            return this.waitFor({
+              id: "DetailPage",
+              viewName: sDetailViewName,
+              controlType: "sap.m.Page",
+              success: function(){
+                Opa5.assert.ok(true, "The detail page shows");
+              }
+            });
+          },
           theFieldsShouldBeEditable: function(){
             return this.waitFor({
-              controlType: ["sap.m.Input", "sap.m.DatePicker"],
+              controlType: "sap.m.Input",//"sap.m.Input", "sap.m.DatePicker"],
               viewName: sDetailViewName,
               matchers: function(inputs){
                 //inputs should be an array of inputs

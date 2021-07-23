@@ -1,8 +1,8 @@
 sap.ui.define([
   "sap/ui/test/Opa5",
   "./arrangements/Startup",
-  "./MainJourney",
-  "./DetailJourney"
+  "./MainJourney"
+  // "./DetailJourney"
 ], function(Opa5, Startup) {
   "use strict";
 

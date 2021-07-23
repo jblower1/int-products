@@ -5,7 +5,6 @@
   xmlns:smartlist="sap.ui.comp.smartlist">
       <Page title="{i18n>worklistTitle}">
         <headerContent>
-        
         </headerContent>
         <content>
           <Table id="productsTable" items="{path: '/Products'}">

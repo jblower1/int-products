@@ -6,7 +6,7 @@ sap.ui.define([
 
     return Controller.extend("interview.products.controller.DetailView", {
         onInit: function(){
-            //load jsohhn object model for driving editable object page
+            //load json object model for driving editable object page
             this.objectModel = this.getOwnerComponent().getModel("Object");
             this.initialiseObjectModel();
             //when view loads, need to bind the model to the view
@@ -22,7 +22,7 @@ sap.ui.define([
         initialiseObjectModel: function(){
             this.objectModel.setProperty("/editable", false);
         },
-        pressEdit: function(oEvent){
+        pressEdit: function(){
             let editable = this.objectModel.getProperty("/editable");
             if (!editable){ //make it editable
                 this.objectModel.setProperty("/editable", true);

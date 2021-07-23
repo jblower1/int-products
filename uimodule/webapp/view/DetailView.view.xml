@@ -4,7 +4,7 @@
   xmlns:mvc="sap.ui.core.mvc"
   xmlns:layout="sap.ui.layout"
   xmlns:m="sap.m">
-      <m:Page title="{i18n>detailTitle}" showNavButton="true" navButtonPress="onNavBack">
+      <m:Page id="DetailPage" title="{i18n>detailTitle}" showNavButton="true" navButtonPress="onNavBack">
         <m:content>
           <ObjectPageLayout
             id="ProductDetail"
