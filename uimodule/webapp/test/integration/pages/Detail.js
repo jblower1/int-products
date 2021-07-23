@@ -47,7 +47,7 @@ sap.ui.require([
           },
           theFieldsShouldBeEditable: function(){
             return this.waitFor({
-              controlType: "sap.m.Input",//"sap.m.Input", "sap.m.DatePicker"],
+              controlType: "sap.m.Input", //"sap.m.Input", "sap.m.DatePicker"],
               viewName: sDetailViewName,
               matchers: function(inputs){
                 //inputs should be an array of inputs

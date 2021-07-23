@@ -3,7 +3,7 @@ sap.ui.require([
   "sap/ui/test/matchers/AggregationLengthEquals",
   "sap/ui/test/matchers/I18NText",
   "sap/ui/test/actions/Press",
-  'sap/ui/test/matchers/BindingPath'
+  "sap/ui/test/matchers/BindingPath"
 ], function (Opa5, AggregationLengthEquals, I18NText, Press, BindingPath) {
   "use strict";
 
@@ -41,9 +41,19 @@ sap.ui.require([
             actions: new Press(),
             errorMessage: "No list item with the id " + sId + " was found."
           });
+        },
+        iPressTheFirstRow: function(){
+          return this.waitFor({
+            id: "productsTable",
+            viewName: sViewName,
+            matchers: function (oTable) {
+              return oTable.getItems()[1];
+            },
+            actions: new Press(),
+            errorMessage: "Table in view '" + sViewName + "' does not contain an Item at position '" + 1 + "'"
+          });
         }
       },
-
       assertions: {
           // add assertion functions here
           iShouldSeeTheTitle: function () {
@@ -124,16 +134,16 @@ sap.ui.require([
         },
         theFieldsShouldBeEditable: function(){
           return this.waitFor({
-            controlType: "sap.m.Input",//"sap.m.Input", "sap.m.DatePicker"],
+            controlType: "sap.m.Input", //"sap.m.Input", "sap.m.DatePicker"],
             viewName: sDetailViewName,
-            matchers: function(inputs){
+            success: function(inputs){
               //inputs should be an array of inputs
               if (inputs.length === 0){
-                return false;
+                Opa5.assert.ok(false, "No inputs found");
               }
-              return inputs.every(function(input){
+              Opa5.assert.ok(inputs.every(function(input){
                 return input.getEnabled();
-              });
+              }), "All inputs in Edit mode");
             }
           });
         }

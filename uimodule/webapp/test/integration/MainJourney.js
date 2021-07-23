@@ -22,17 +22,18 @@ sap.ui.define([
   opaTest("Should see the detail page with title", function(Given, When, Then){
     // Then.onTheDetailPage.iChangeTheHashToTheObjectItem();
     // When.onTheMainPage.iChangeTheHashToTheObjectItem();
-    When.onTheMainPage.iPressOnTheItemWithTheID("P5782");
+    // When.onTheMainPage.iPressOnTheItemWithTheID("P5782");
+    When.onTheMainPage.iPressTheFirstRow();
     Then.onTheDetailPage.iShouldSeeTheTitle();
 
   });
 
   opaTest("Should see editable fields when the edit button is pressed", function(Given, When, Then){
     // When.onTheDetailPage.iChangeTheHashToTheObjectItem();
-    When.onTheMainPage.iChangeTheHashToTheObjectItem();
-    // When.onTheDetailPage.iPressTheEditButton();
-    Then.onTheDetailPage.iShouldSeeTheDetailPage();
-    // Then.onTheDetailPage.theFieldsShouldBeEditable();
+    // When.onTheMainPage.iChangeTheHashToTheObjectItem();
+    When.onTheDetailPage.iPressTheEditButton();
+    // Then.onTheDetailPage.iShouldSeeTheDetailPage();
+    Then.onTheDetailPage.theFieldsShouldBeEditable();
     Then.iTeardownMyApp();
   });
 
